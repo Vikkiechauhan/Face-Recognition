@@ -40,10 +40,6 @@ for f in glob.glob(os.path.join(faces_folder_path, "b1.jpg")):
         vector=np.array(face_descriptor)
         print(face_descriptor)
         
-
-
-
-
 for f2 in glob.glob(os.path.join(faces_folder_path, "b11.jpg")):
    print("Processing file: {}".format(f2))
    img2 = dlib.load_rgb_image(f2)
@@ -60,7 +56,7 @@ for f2 in glob.glob(os.path.join(faces_folder_path, "b11.jpg")):
         vector2=np.array(face_descriptor2)
         print(face_descriptor2)
         
-dist=(np.sqrt((sum(vector)-sum(vector2))**2))
+dist=np.sqrt(sum(vector-vector2)**2))
 if(dist<=0.6):
    print("Image is same. ")
 else:
